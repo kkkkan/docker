@@ -187,4 +187,12 @@ RUN sdkmanager \
 # API_LEVEL string gets replaced by m4
 RUN sdkmanager "platforms;android-29"
 
-RUN sdkmanager "cmake;3.10.2.4988404" "ndk;21.0.6113669"
+RUN sdkmanager "cmake;3.6.4111459" "cmake;3.10.2.4988404" "ndk;21.0.6113669"
+
+RUN sudo apt-get update && sudo apt-get install -y gradle && \
+    cd /tmp && \
+    gradle wrapper --gradle-version 5.4.1 --distribution-type all && \
+    ./gradlew wrapper && \
+    sudo rm -rf .gradle gradle  gradlew  gradlew.bat && \
+    cd .. && \
+    sudo rm -rf /var/lib/apt/lists/*
