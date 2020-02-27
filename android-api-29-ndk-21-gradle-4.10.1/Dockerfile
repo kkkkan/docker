@@ -2,7 +2,7 @@
 
 FROM openjdk:8-jdk-slim
 
-LABEL maintainer="gamako@gmail.com"
+LABEL maintainer="kan4649kan@gmail.com"
 
 # Initial Command run as `root`.
 
@@ -191,7 +191,7 @@ RUN sdkmanager "cmake;3.6.4111459" "cmake;3.10.2.4988404" "ndk;21.0.6113669"
 
 RUN sudo apt-get update && sudo apt-get install -y gradle && \
     cd /tmp && \
-    gradle wrapper --gradle-version 5.4.1 --distribution-type all && \
+    gradle wrapper --gradle-version 4.10.1 --distribution-type all && \
     ./gradlew wrapper && \
     sudo rm -rf .gradle gradle  gradlew  gradlew.bat && \
     cd .. && \
