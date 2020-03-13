@@ -68,7 +68,7 @@ RUN sdkmanager "cmake;3.6.4111459" "cmake;3.10.2.4988404" "ndk;21.0.6113669"
 RUN apt-get update && apt-get install -y gradle && \
     cd /tmp && \
     gradle wrapper --gradle-version 4.10.1 --distribution-type all && \
-    ./gradlew wrapper && \
+    ./gradlew wrapper --gradle-version 4.10.1 --distribution-type all && \
     rm -rf .gradle gradle  gradlew  gradlew.bat && \
     cd .. && \
     sudo rm -rf /var/lib/apt/lists/*
