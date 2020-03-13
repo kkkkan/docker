@@ -69,6 +69,6 @@ RUN apt-get update && apt-get install -y gradle && \
     cd /tmp && \
     gradle wrapper --gradle-version 4.10.1 --distribution-type all && \
     ./gradlew wrapper --gradle-version 4.10.1 --distribution-type all && \
-    rm -rf .gradle gradle  gradlew  gradlew.bat && \
+    # rm -rf .gradle gradle  gradlew  gradlew.bat && \
     cd .. && \
     sudo rm -rf /var/lib/apt/lists/*
